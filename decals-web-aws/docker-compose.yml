@@ -1,0 +1,25 @@
+version: '2'
+services:
+  app:
+    group_add:
+    - www-data
+    image: ziyaointl/decals-web:spin-0.0.1
+    cap_drop:
+    - ALL
+    ports:
+    - 3032:3032/tcp
+    user: 79963:79963
+    labels:
+      io.rancher.container.pull_image: always
+  web:
+    image: ziyaointl/spin-web:0.0.9
+    ports:
+    - 60028:8080
+    user: 79963:79963
+    group_add:
+    - nginx
+    cap_drop:
+    - ALL
+    depends_on:
+    - app
+
