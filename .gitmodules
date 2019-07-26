@@ -1,0 +1,3 @@
+[submodule "decals-web-aws/decals-web"]
+	path = decals-web-aws/decals-web
+	url = https://github.com/legacysurvey/decals-web.git
