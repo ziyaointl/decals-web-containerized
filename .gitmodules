@@ -7,12 +7,12 @@
 [submodule "decals-web-aws/legacypipe"]
 	path = decals-web-aws/legacypipe
 	url = https://github.com/legacysurvey/legacypipe
-[submodule "decals-web-spin/decals-web"]
-        path = decals-web-spin/decals-web
-        url = https://github.com/legacysurvey/decals-web.git
-[submodule "decals-web-spin/tractor"]
-        path = decals-web-aws/tractor
-        url = https://github.com/ziyaointl/tractor.git
-[submodule "decals-web-spin/legacypipe"]
-        path = decals-web-aws/legacypipe
-        url = https://github.com/legacysurvey/legacypipe
+[submodule "decals-web-spin/app/decals-web"]
+	path = decals-web-spin/app/decals-web
+	url = https://github.com/legacysurvey/decals-web.git
+[submodule "decals-web-spin/app/tractor"]
+	path = decals-web-spin/app/tractor
+	url = https://github.com/ziyaointl/tractor.git
+[submodule "decals-web-spin/app/legacypipe"]
+	path = decals-web-spin/app/legacypipe
+	url = https://github.com/legacysurvey/legacypipe
