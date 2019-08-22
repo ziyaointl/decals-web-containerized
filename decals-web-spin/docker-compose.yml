@@ -4,24 +4,42 @@ services:
     retain_ip: true
     group_add:
     - www-data
-    image: ziyaointl/decals-web-spin:app-0.0.10
+    image: ziyaointl/decals-web-spin:app-0.0.12
     cap_drop:
     - ALL
     user: 79963:79963
     volumes:
-    - /global/project/projectdirs/cosmo/webapp/viewer-dev/data:/app/decals-web/data:ro
+    - /global/project/projectdirs/cosmo/webapp/viewer:/app/decals-web:ro
     - /global/project/projectdirs/cosmo/webapp/viewer/data:/global/project/projectdirs/cosmo/webapp/viewer/data:ro
     - /global/project/projectdirs/cosmo/webapp/viewer/data:/project/projectdirs/cosmo/webapp/viewer/data:ro
     - /global/project/projectdirs/cosmo:/global/project/projectdirs/cosmo:ro
     - /global/project/projectdirs/cosmo:/project/projectdirs/cosmo:ro
     - /global/projecta/projectdirs/cosmo:/global/projecta/projectdirs/cosmo:ro
     - /global/projecta/projectdirs/cosmo:/projecta/projectdirs/cosmo:ro
+    - /global/projecta/projectdirs/sdss:/global/projecta/projectdirs/sdss:ro
+    labels:
+      io.rancher.container.pull_image: always
+  app-dev:
+    retain_ip: true
+    group_add:
+    - www-data
+    image: ziyaointl/decals-web-spin:app-0.0.12
+    cap_drop:
+    - ALL
+    user: 79963:79963
+    volumes:
+    - /global/project/projectdirs/cosmo/webapp/viewer-dev:/app/decals-web:ro
+    - /global/project/projectdirs/cosmo/webapp/viewer/data:/global/project/projectdirs/cosmo/webapp/viewer/data:ro
+    - /global/project/projectdirs/cosmo/webapp/viewer/data:/project/projectdirs/cosmo/webapp/viewer/data:ro
+    - /global/project/projectdirs/cosmo:/global/project/projectdirs/cosmo:ro
+    - /global/project/projectdirs/cosmo:/project/projectdirs/cosmo:ro
+    - /global/projecta/projectdirs/cosmo:/global/projecta/projectdirs/cosmo:ro
+    - /global/projecta/projectdirs/cosmo:/projecta/projectdirs/cosmo:ro
+    - /global/projecta/projectdirs/sdss:/global/projecta/projectdirs/sdss:ro
     labels:
       io.rancher.container.pull_image: always
   web:
     image: ziyaointl/decals-web-spin:web-0.0.2
-    ports:
-    - 60028:8080
     user: 79963:58191
     group_add:
     - nginx
@@ -31,5 +49,7 @@ services:
     - app
     volumes:
     - /global/project/projectdirs/cosmo/webapp/decals-web:/global/project/projectdirs/cosmo/webapp/decals-web:ro
+    - /global/project/projectdirs/cosmo/webapp/viewer-dev:/global/project/projectdirs/cosmo/webapp/viewer-dev:ro
+    - /global/project/projectdirs/cosmo/webapp/viewer:/global/project/projectdirs/cosmo/webapp/viewer:ro
     - /global/project/projectdirs/cosmo/webapp/decals-web/viewer.conf:/etc/nginx/conf.d/default.conf:ro
-
+    - /global/project/projectdirs/cosmo/webapp/legacysurvey-8.0.1:/global/project/projectdirs/cosmo/webapp/legacysurvey:ro
