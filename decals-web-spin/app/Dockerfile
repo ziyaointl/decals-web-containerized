@@ -18,7 +18,9 @@ RUN apt-get update && \
 
 COPY . /app
 
-RUN export PYTHONPATH=$(pwd)/legacypipe/py:$PYTHONPATH && \
+RUN cd tractor && make && \
+    cd /app && \
+    export PYTHONPATH=$(pwd)/legacypipe/py:$PYTHONPATH && \
     export PYTHONPATH=$(pwd)/tractor:$PYTHONPATH && \
     export PYTHONPATH=$(pwd)/decals-web:$PYTHONPATH && \
     cd decals-web && \
