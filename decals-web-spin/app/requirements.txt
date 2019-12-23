@@ -28,7 +28,7 @@ pandocfilters==1.4.2
 parso==0.4.0
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==5.1.0
+pillow>=6.2.0
 pluggy==0.12.0
 prometheus-client==0.6.0
 prompt-toolkit==2.0.9
@@ -61,3 +61,4 @@ uWSGI==2.0.18
 wcwidth==0.1.7
 webencodings==0.5.1
 zipp==0.5.1
+requests
