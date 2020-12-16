@@ -10,7 +10,7 @@ decorator==4.4.0
 defusedxml==0.6.0
 Django>=2.2.3
 entrypoints==0.3
-fitsio==0.9.12
+fitsio==1.1.2
 importlib-metadata==0.17
 jedi==0.13.3
 Jinja2==2.10.1
