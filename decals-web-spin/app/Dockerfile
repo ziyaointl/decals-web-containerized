@@ -14,18 +14,12 @@ RUN apt-get update && \
     ln -s /usr/bin/python3 /usr/bin/python && \
     pip install --no-cache-dir -r requirements.txt && \
     pip install pyfits && \
-    pip install -e git+http://github.com/dstndstn/astrometry.net@23579ec66cf38547264ef058204fc36abdcb40c4#egg=astrometry --log LOG_FILE
+    apt-get -y clean
 
 COPY . /app
 
-RUN cd tractor && make && \
-    cd /app && \
-    export PYTHONPATH=$(pwd)/legacypipe/py:$PYTHONPATH && \
-    export PYTHONPATH=$(pwd)/tractor:$PYTHONPATH && \
-    export PYTHONPATH=$(pwd)/decals-web:$PYTHONPATH && \
-    cd decals-web && \
-    python3 manage.py migrate && \
-    apt-get -y clean
+RUN pip install -e git+http://github.com/dstndstn/astrometry.net@0.84#egg=astrometry --log LOG_FILE && \
+    pip install -e git+https://github.com/dstndstn/tractor.git@dr9.5#egg=tractor && \
 
 EXPOSE 80
 
