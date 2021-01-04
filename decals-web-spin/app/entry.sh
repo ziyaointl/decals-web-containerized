@@ -4,5 +4,5 @@ export PYTHONPATH=$(pwd)/tractor:$PYTHONPATH && \
 export PYTHONPATH=$(pwd)/decals-web:$PYTHONPATH && \
 cd decals-web
 #service nginx start
-uwsgi --touch-reload --ini uwsgi.ini
+uwsgi --touch-reload wsgi.py --ini uwsgi.ini
 #python3 manage.py runserver 0.0.0.0:8000
