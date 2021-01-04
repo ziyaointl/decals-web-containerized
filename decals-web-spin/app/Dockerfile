@@ -19,7 +19,7 @@ RUN apt-get update && \
 COPY . /app
 
 RUN pip install -e git+http://github.com/dstndstn/astrometry.net@0.84#egg=astrometry --log LOG_FILE && \
-    pip install -e git+https://github.com/dstndstn/tractor.git@dr9.5#egg=tractor && \
+    pip install -e git+https://github.com/dstndstn/tractor.git@dr9.5#egg=tractor
 
 EXPOSE 80
 
