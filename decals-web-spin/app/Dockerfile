@@ -13,7 +13,6 @@ RUN apt-get update && \
     python3 get-pip.py && \
     ln -s /usr/bin/python3 /usr/bin/python && \
     pip install --no-cache-dir -r requirements.txt && \
-    pip install pyfits && \
     apt-get -y clean
 
 COPY . /app
