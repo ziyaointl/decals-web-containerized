@@ -20,6 +20,8 @@ RUN pip install -e git+http://github.com/dstndstn/astrometry.net@0.84#egg=astrom
 
 RUN pip install uwsgitop
 
+RUN apt install -y iputils-ping iotop
+
 COPY . /app
 
 ENTRYPOINT ["/app/entry.sh"]
