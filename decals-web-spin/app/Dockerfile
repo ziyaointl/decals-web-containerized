@@ -15,12 +15,14 @@ RUN apt-get update && \
     pip install --no-cache-dir -r requirements.txt && \
     apt-get -y clean
 
-COPY . /app
-
 RUN pip install -e git+http://github.com/dstndstn/astrometry.net@0.84#egg=astrometry --log LOG_FILE && \
     pip install -e git+https://github.com/dstndstn/tractor.git@dr9.5#egg=tractor
 
-EXPOSE 80
+RUN pip install uwsgitop
+
+COPY . /app
 
 ENTRYPOINT ["/app/entry.sh"]
+
+#EXPOSE 80
 #CMD ["python3", "decals-web/manage.py", "runserver", "0.0.0.0:8000"]

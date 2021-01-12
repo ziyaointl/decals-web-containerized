@@ -1,8 +1,9 @@
 #!/bin/bash
 export PYTHONPATH=$(pwd)/legacypipe/py:$PYTHONPATH && \
 export PYTHONPATH=$(pwd)/tractor:$PYTHONPATH && \
-export PYTHONPATH=$(pwd)/decals-web:$PYTHONPATH && \
-cd decals-web
+export PYTHONPATH=$(pwd)/viewer:$PYTHONPATH && \
+cd viewer
+uwsgi --stats 127.0.0.1:1717 --touch-reload wsgi.py --ini uwsgi.ini
+
 #service nginx start
-uwsgi --touch-reload wsgi.py --ini uwsgi.ini
 #python3 manage.py runserver 0.0.0.0:8000
