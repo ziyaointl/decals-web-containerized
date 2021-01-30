@@ -1,6 +1,6 @@
 [submodule "decals-web-aws/decals-web"]
 	path = decals-web-aws/decals-web
-	url = https://github.com/legacysurvey/decals-web.git
+	url = https://github.com/legacysurvey/imagine
 [submodule "decals-web-aws/tractor"]
 	path = decals-web-aws/tractor
 	url = https://github.com/ziyaointl/tractor.git
