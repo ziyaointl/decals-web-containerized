@@ -11,13 +11,18 @@ git clone --recurse-submodules https://github.com/ziyaointl/decals-web-container
 ```
 
 ### AWS (decals-web lite)
-1. Build & push container
+1. Copy the settings file you want to use. Example:
+```bash
+cd decals-web-containerized/decals-web-aws/decals-web/viewer
+cp settings_pr_dev.py settings.py
+```
+2. Build & push container
 ```bash
 cd decals-web-containerized/decals-web-aws
 docker build -t <your tag> .
 docker push <your tag>
 ```
-2. Deploy on AWS Elasticbean Stalk / GKE / etc.
+3. Deploy on AWS Elasticbean Stalk / GKE / etc.
 
 ### Spin
 1. Build & push container
