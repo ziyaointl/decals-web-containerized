@@ -5,7 +5,7 @@ WORKDIR /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y build-essential curl git libpcre3 libpcre3-dev nginx
+    apt-get install -y build-essential curl git swig libpcre3 libpcre3-dev nginx
 
 COPY requirements.txt /app/
 RUN  pip install --no-cache-dir -r requirements.txt

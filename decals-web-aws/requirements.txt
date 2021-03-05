@@ -1,4 +1,4 @@
--e git+http://github.com/dstndstn/astrometry.net@23579ec66cf38547264ef058204fc36abdcb40c4#egg=astrometry
+-e git+http://github.com/dstndstn/astrometry.net@0.84#egg=astrometry
 astropy==3.2.1
 atomicwrites==1.3.0
 attrs==19.1.0
