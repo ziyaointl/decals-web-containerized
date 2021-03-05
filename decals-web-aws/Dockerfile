@@ -8,7 +8,11 @@ RUN apt-get update && \
     apt-get install -y build-essential curl git swig libpcre3 libpcre3-dev nginx
 
 COPY requirements.txt /app/
-RUN  pip install --no-cache-dir -r requirements.txt
+# We must install intel-numpy first, because otherwise pip does not realize it provides 'numpy'
+# and it will install regular numpy as well as intel-numpy, and problems will result
+# (eg with fitsio).  intel-numpy is a requirement of mkl-fft.
+RUN pip install --no-cache-dir intel-numpy
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app    
 
