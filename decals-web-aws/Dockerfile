@@ -22,10 +22,6 @@ COPY . /app
 
 RUN ln -s /app/viewer.conf /etc/nginx/sites-enabled && \
     rm /etc/nginx/sites-enabled/default
-#    && \
-#    export PYTHONPATH=$(pwd)/tractor:$PYTHONPATH && \
-#    export PYTHONPATH=$(pwd)/legacypipe/py:$PYTHONPATH && \
-#    export PYTHONPATH=$(pwd)/decals-web:$PYTHONPATH
 
 EXPOSE 80
 
